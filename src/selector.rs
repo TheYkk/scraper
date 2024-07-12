@@ -86,6 +86,10 @@ pub struct Parser;
 impl<'i> parser::Parser<'i> for Parser {
     type Impl = Simple;
     type Error = SelectorParseErrorKind<'i>;
+
+    fn parse_has(&self) -> bool {
+        true
+    }
 }
 
 /// A simple implementation of `SelectorImpl` with no pseudo-classes or pseudo-elements.
